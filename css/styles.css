@@ -1,0 +1,14 @@
+
+:root {
+    --primary-color: rgb(105, 212, 157);
+    --text-color: rgb(55, 6, 214);
+}
+
+.pokemon {
+    padding: 20px;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
