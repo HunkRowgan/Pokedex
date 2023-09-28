@@ -4,7 +4,7 @@ spans multiple
 lines
 */
 
-
+let pokemonRepository = (function (){
 let pokemonList = [];
 
 pokemonList = [
@@ -34,14 +34,26 @@ pokemonList = [
 
 ];
 
+return {
+    getAll: function(){
+        return pokemonList;
+    },
+    add: function(item){
+        return pokemonList.push(item);
+     }
+    };
+})();
+
+pokemonRepository.add({ name: 'Pikachu', type: ['the best one'], height: 1.4, })
+
 // Iterate through the pokemonList and display each Pokemon's name and height
-/* pokemonList.forEach(function (pokemon) {
+pokemonRepository.getAll().forEach(function (pokemon) {
     document.write(`Name: ${pokemon.name}, Type: ${pokemon.type.join(', ')}, Height: ${pokemon.height} meters<br>`);
   })
-*/
 
 
-for (let i = 0; i < pokemonList.length; i++) {
+
+/*for (let i = 0; i < pokemonList.length; i++) {
     
 
     if (pokemonList[i].height > 1) {
@@ -49,7 +61,7 @@ for (let i = 0; i < pokemonList.length; i++) {
     } else {
         document.write(`Name: ${pokemonList[i].name} Type: ${pokemonList[i].type} Height: ${pokemonList[i].height} metres<br>`)
     }
-}
+}*/
 
 ;
   
