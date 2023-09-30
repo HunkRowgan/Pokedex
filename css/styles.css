@@ -2,13 +2,36 @@
 :root {
     --primary-color: rgb(105, 212, 157);
     --text-color: rgb(55, 6, 214);
+    --container-color: rgb(255, 98, 234);
+    --background-color: aquamarine;
+    --button-color: rgb(13, 174, 255);
+    --font-size: 16px;
 }
 
 .pokemon {
-    padding: 20px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: var(--font-size);
     color: var(--text-color);
     background-color: var(--primary-color);
     text-align: center;
+    width: 100%;
+}
+
+.pokemon-list {
+    padding: 50px;
+    list-style: none;
+    background-color: var(--background-color);
+    font-size: var(--font-size);
+    width: 100%;
+
+}
+
+.button {
+    padding: 10px;
+    margin: 5px auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: var(--button-color);
+
 }
 

@@ -34,22 +34,45 @@ pokemonList = [
 
 ];
 
+function showDetails (pokemon){
+    console.log(pokemon);
+};
+
+
+function addListItem (pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button');
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
+
+    button.addEventListener('click', function(event){
+        showDetails(pokemon);
+    })
+
+}
+
+
+
 return {
     getAll: function(){
         return pokemonList;
     },
     add: function(item){
         return pokemonList.push(item);
-     }
+     },
+     addListItem: addListItem
     };
 })();
 
-pokemonRepository.add({ name: 'Pikachu', type: ['the best one'], height: 1.4, })
+console.log(pokemonRepository.getAll());
 
 // Iterate through the pokemonList and display each Pokemon's name and height
 pokemonRepository.getAll().forEach(function (pokemon) {
-    document.write(`Name: ${pokemon.name}, Type: ${pokemon.type.join(', ')}, Height: ${pokemon.height} meters<br>`);
-  })
+    pokemonRepository.addListItem(pokemon);
+  });
 
 
 
