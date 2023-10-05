@@ -42,6 +42,12 @@ function addListItem (pokemon) {
     button.addEventListener('click', function(event){
         showDetails(pokemon);
     })
+    button.addEventListener('keypress', function(event){
+        if (event.key === 'Enter') {
+            event.preventDefault(); //prevent default of keydown
+            showDetails(pokemon);
+        }
+    });
 }
 //loadList
 function loadList() {
