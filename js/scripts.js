@@ -107,7 +107,7 @@ function loadDetails(item) {
     contentElement.innerText = 'Height: ' + pokemon.height;
 
     let imageElement = document.createElement('img');
-    imageElement.src = imageElement.imageUrl;
+    imageElement.src = pokemon.imageUrl;
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
