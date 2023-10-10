@@ -10,10 +10,6 @@ let pokemonRepository = (function () {
   let modalContainer = document.querySelector('#modal-container');
   let dialogPromiseReject;
 
-function showDetails (pokemon){
-    console.log(pokemon);
-};
-
 
 function add(pokemon) {
     if (
@@ -37,6 +33,8 @@ function addListItem (pokemon) {
     button.innerText = pokemon.name;
     button.classList.add('button', 'btn-block', 'btn-lg');
     listItem.classList.add('list-group-item', 'col-sm-6', 'col-md-4', 'col-lg-2');
+    button.setAttribute('data-target', '#modal-container'); // review
+    button.setAttribute('data-toggle', "modal"); // review
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
 
@@ -78,6 +76,7 @@ function loadDetails(item) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      item.weight = details.weight;
       showModal(item);
     }).catch(function (e) {
       console.error(e);
@@ -95,22 +94,22 @@ function loadDetails(item) {
 function showModal(pokemon) {
   //create variables to call modal elements
   let modalBody = $(".modal-body");
-  let modalTitle = $(".modal-title");
+  //let modalTitle = $(".modal-title");
   let modalHeader = $(".modal-header");
 
   // empty any existing content from modal elements
-  modalTitle.empty();
+  modalHeader.empty();
   modalBody.empty();
 
   //creating element for pokemon name
-  let titleElement = $("<h1>" + pokemon.name + "</h1>");
+  let headerElement = $("<h1>" + pokemon.name + "</h1>");
   //create img element
   let imageElement = $('<img class = "modal-img" style = "width:50%">');
   imageElement.attr("src", pokemon.imageUrl);
-  //create pokemon height element
-  let contentElement = $("<p>Height: " + pokemon.height + "<br>Weight: " + pokemon.weight + "<br>Type: " + pokemon.types + "</p>");
+  //create pokemon content element
+  let contentElement = $("<p>Height: " + pokemon.height + "m" + "<br>Weight: " + pokemon.weight + "kg" /*+ "<br>Type: " + pokemon.types*/ + "</p>"); // will add types in later
 
-  modalTitle.append(titleElement);
+  modalHeader.append(headerElement);
   modalBody.append(imageElement);
   modalBody.append(contentElement);
 }

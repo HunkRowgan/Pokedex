@@ -8,9 +8,11 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css"> <!--after bootstrap cdn to allow custom editing in css-->
   </head>
   <body>
-    <div class="pokemon container-fluid">
-        <p>Pokemon</p>
-    </div>
+    <nav class="pokemon container-fluid"> <div class = "navbar">
+      <img src = "images/Pikachu.svg" width = 10% class="d-inline-block align-top" alt = "Image of Pikachu">
+      </div>
+      <h1>Pokemon</h1>
+    </nav>
     <ul class="pokemon-list list-group-flush row"></ul>
     <!--modal-->
     <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -27,7 +29,6 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>

@@ -17,6 +17,15 @@
     width: 100%;
 }
 
+.list-group-item {
+    padding: 10px;
+    font-size: var(--font-size);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    text-align: center;
+    width: 100%;
+}
+
 .pokemon-list {
     padding: 50px;
     list-style: none;
@@ -67,18 +76,30 @@ text-align: center;
 margin: auto;
 display: block;
 box-sizing: border-box;
+float:center;
 background: rgb(255, 191, 246);
 padding: 15px;
-width: 30%;
+width: 50%;
 max-width: 700px;
-text-align: left;
+text-align: center;
 border: 2px solid brown;
 border-radius: 5%;
 }
 
+.modal-content {
+    border-radius: 10%;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.modal-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
 .modal-close {
 float: right;
--webkit-appearance: none;
 border: 1px solid black;
 border-radius: 10%;
 background: lightblue;
