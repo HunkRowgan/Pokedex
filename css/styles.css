@@ -9,7 +9,7 @@
 }
 
 .pokemon {
-    padding: 10px;
+    
     font-size: var(--font-size);
     color: var(--text-color);
     background-color: var(--primary-color);
@@ -18,7 +18,7 @@
 }
 
 .list-group-item {
-    padding: 10px;
+    
     font-size: var(--font-size);
     color: var(--text-color);
     background-color: var(--background-color);
@@ -27,12 +27,12 @@
 }
 
 .pokemon-list {
-    padding: 50px;
+    
     list-style: none;
     background-color: var(--background-color);
     font-size: var(--font-size);
     width: 100%;
-
+    margin-top: 130px;
 }
 
 .button {
